@@ -1,0 +1,160 @@
+<!doctype HTML>
+
+<html>
+<head>
+<link rel=StyleSheet href="style.css" type="text/css" media="screen">
+<title>4x4 suduku</title>
+<script type="text/javascript" src="naiveBacktracking.js"> 
+</script>
+
+
+
+</head>
+
+<body>
+
+<form name="puzzle" action="" method="GET">
+<p> put your variables in the box:</p>
+
+
+<span class="block">
+<span class="cell">	<input name="digit" size="1" value="" id ="0" onchange="return verify(0);" type="text"></span>
+<span class="cell">	<input name="digit" size="1" value="" id ="1" onchange="return verify(1);" type="text"></span>
+<span class="cell">	<input name="digit" size="1" value="" id ="2" onchange="return verify(2);" type="text"></span>
+<div class="clr"> </div>
+<span class="cell">	<input name="digit" size="1" value="" id ="3" onchange="return verify(3);" type="text"></span>
+<span class="cell">	<input name="digit" size="1" value="" id ="4" onchange="return verify(4);" type="text"></span>
+<span class="cell">	<input name="digit" size="1" value="" id ="5" onchange="return verify(5);" type="text"></span>
+<div class="clr"> </div>
+<span class="cell">	<input name="digit" size="1" value="" id ="6" onchange="return verify(6);" type="text"></span>
+<span class="cell">	<input name="digit" size="1" value="" id ="7" onchange="return verify(7);" type="text"></span>
+<span class="cell">	<input name="digit" size="1" value="" id ="8" onchange="return verify(8);" type="text"></span>
+</span>
+
+<span class="block">
+<span class="cell">	<input name="digit" size="1" value="" id ="9" onchange="return verify(9);" type="text"></span>
+<span class="cell">	<input name="digit" size="1" value="" id ="10" onchange="return verify(10);" type="text"></span>
+<span class="cell">	<input name="digit" size="1" value="" id ="11" onchange="return verify(11);" type="text"></span>
+<div class="clr"> </div>
+<span class="cell">	<input name="digit" size="1" value="" id ="12" onchange="return verify(12);" type="text"></span>
+<span class="cell">	<input name="digit" size="1" value="" id ="13" onchange="return verify(13);" type="text"></span>
+<span class="cell">	<input name="digit" size="1" value="" id ="14" onchange="return verify(14);" type="text"></span>
+<div class="clr"> </div>
+<span class="cell">	<input name="digit" size="1" value="" id ="15" onchange="return verify(15);" type="text"></span>
+<span class="cell">	<input name="digit" size="1" value="" id ="16" onchange="return verify(16);" type="text"></span>
+<span class="cell">	<input name="digit" size="1" value="" id ="17" onchange="return verify(17);" type="text"></span>
+</span>
+
+<span class="block">
+<span class="cell">	<input name="digit" size="1" value="" id ="18" onchange="return verify(18);" type="text"></span>
+<span class="cell">	<input name="digit" size="1" value="" id ="19" onchange="return verify(19);" type="text"></span>
+<span class="cell">	<input name="digit" size="1" value="" id ="20" onchange="return verify(20);" type="text"></span>
+<div class="clr"> </div>
+<span class="cell">	<input name="digit" size="1" value="" id ="21" onchange="return verify(21);" type="text"></span>
+<span class="cell">	<input name="digit" size="1" value="" id ="22" onchange="return verify(22);" type="text"></span>
+<span class="cell">	<input name="digit" size="1" value="" id ="23" onchange="return verify(23);" type="text"></span>
+<div class="clr"> </div>
+<span class="cell">	<input name="digit" size="1" value="" id ="24" onchange="return verify(24);" type="text"></span>
+<span class="cell">	<input name="digit" size="1" value="" id ="25" onchange="return verify(25);" type="text"></span>
+<span class="cell">	<input name="digit" size="1" value="" id ="26" onchange="return verify(26);" type="text"></span>
+</span>
+<div class="clr"> </div>
+
+<span class="block">
+<span class="cell">	<input name="digit" size="1" value="" id ="27" onchange="return verify(27);" type="text"></span>
+<span class="cell">	<input name="digit" size="1" value="" id ="28" onchange="return verify(28);" type="text"></span>
+<span class="cell">	<input name="digit" size="1" value="" id ="29" onchange="return verify(29);" type="text"></span>
+<div class="clr"> </div>
+<span class="cell">	<input name="digit" size="1" value="" id ="30" onchange="return verify(30);" type="text"></span>
+<span class="cell">	<input name="digit" size="1" value="" id ="31" onchange="return verify(31);" type="text"></span>
+<span class="cell">	<input name="digit" size="1" value="" id ="32" onchange="return verify(32);" type="text"></span>
+<div class="clr"> </div>
+<span class="cell">	<input name="digit" size="1" value="" id ="33" onchange="return verify(33);" type="text"></span>
+<span class="cell">	<input name="digit" size="1" value="" id ="34" onchange="return verify(34);" type="text"></span>
+<span class="cell">	<input name="digit" size="1" value="" id ="35" onchange="return verify(35);" type="text"></span>
+</span>
+
+<span class="block">
+<span class="cell">	<input name="digit" size="1" value="" id ="36" onchange="return verify(36);" type="text"></span>
+<span class="cell">	<input name="digit" size="1" value="" id ="37" onchange="return verify(37);" type="text"></span>
+<span class="cell">	<input name="digit" size="1" value="" id ="38" onchange="return verify(38);" type="text"></span>
+<div class="clr"> </div>
+<span class="cell">	<input name="digit" size="1" value="" id ="39" onchange="return verify(39);" type="text"></span>
+<span class="cell">	<input name="digit" size="1" value="" id ="40" onchange="return verify(40);" type="text"></span>
+<span class="cell">	<input name="digit" size="1" value="" id ="41" onchange="return verify(41);" type="text"></span>
+<div class="clr"> </div>
+<span class="cell">	<input name="digit" size="1" value="" id ="42" onchange="return verify(42);" type="text"></span>
+<span class="cell">	<input name="digit" size="1" value="" id ="43" onchange="return verify(43);" type="text"></span>
+<span class="cell">	<input name="digit" size="1" value="" id ="44" onchange="return verify(44);" type="text"></span>
+</span>
+
+<span class="block">
+<span class="cell">	<input name="digit" size="1" value="" id ="45" onchange="return verify(45);" type="text"></span>
+<span class="cell">	<input name="digit" size="1" value="" id ="46" onchange="return verify(46);" type="text"></span>
+<span class="cell">	<input name="digit" size="1" value="" id ="47" onchange="return verify(47);" type="text"></span>
+<div class="clr"> </div>
+<span class="cell">	<input name="digit" size="1" value="" id ="48" onchange="return verify(48);" type="text"></span>
+<span class="cell">	<input name="digit" size="1" value="" id ="49" onchange="return verify(49);" type="text"></span>
+<span class="cell">	<input name="digit" size="1" value="" id ="50" onchange="return verify(50);" type="text"></span>
+<div class="clr"> </div>
+<span class="cell">	<input name="digit" size="1" value="" id ="51" onchange="return verify(51);" type="text"></span>
+<span class="cell">	<input name="digit" size="1" value="" id ="52" onchange="return verify(52);" type="text"></span>
+<span class="cell">	<input name="digit" size="1" value="" id ="53" onchange="return verify(53);" type="text"></span>
+</span>
+<div class="clr"> </div>
+
+
+<span class="block">
+<span class="cell">	<input name="digit" size="1" value="" id ="54" onchange="return verify(54);" type="text"></span>
+<span class="cell">	<input name="digit" size="1" value="" id ="55" onchange="return verify(55);" type="text"></span>
+<span class="cell">	<input name="digit" size="1" value="" id ="56" onchange="return verify(56);" type="text"></span>
+<div class="clr"> </div>
+<span class="cell">	<input name="digit" size="1" value="" id ="57" onchange="return verify(57);" type="text"></span>
+<span class="cell">	<input name="digit" size="1" value="" id ="58" onchange="return verify(58);" type="text"></span>
+<span class="cell">	<input name="digit" size="1" value="" id ="59" onchange="return verify(59);" type="text"></span>
+<div class="clr"> </div>
+<span class="cell">	<input name="digit" size="1" value="" id ="60" onchange="return verify(60);" type="text"></span>
+<span class="cell">	<input name="digit" size="1" value="" id ="61" onchange="return verify(60);" type="text"></span>
+<span class="cell">	<input name="digit" size="1" value="" id ="62" onchange="return verify(62);" type="text"></span>
+</span>
+
+<span class="block">
+<span class="cell">	<input name="digit" size="1" value="" id ="63" onchange="return verify(63);" type="text"></span>
+<span class="cell">	<input name="digit" size="1" value="" id ="64" onchange="return verify(64);" type="text"></span>
+<span class="cell">	<input name="digit" size="1" value="" id ="65" onchange="return verify(65);" type="text"></span>
+<div class="clr"> </div>
+<span class="cell">	<input name="digit" size="1" value="" id ="66" onchange="return verify(66);" type="text"></span>
+<span class="cell">	<input name="digit" size="1" value="" id ="67" onchange="return verify(67);" type="text"></span>
+<span class="cell">	<input name="digit" size="1" value="" id ="68" onchange="return verify(68);" type="text"></span>
+<div class="clr"> </div>
+<span class="cell">	<input name="digit" size="1" value="" id ="69" onchange="return verify(69);" type="text"></span>
+<span class="cell">	<input name="digit" size="1" value="" id ="70" onchange="return verify(70);" type="text"></span>
+<span class="cell">	<input name="digit" size="1" value="" id ="71" onchange="return verify(71);" type="text"></span>
+</span>
+
+<span class="block">
+<span class="cell">	<input name="digit" size="1" value="" id ="72" onchange="return verify(72);" type="text"></span>
+<span class="cell">	<input name="digit" size="1" value="" id ="73" onchange="return verify(73);" type="text"></span>
+<span class="cell">	<input name="digit" size="1" value="" id ="74" onchange="return verify(74);" type="text"></span>
+<div class="clr"> </div>
+<span class="cell">	<input name="digit" size="1" value="" id ="75" onchange="return verify(75);" type="text"></span>
+<span class="cell">	<input name="digit" size="1" value="" id ="76" onchange="return verify(76);" type="text"></span>
+<span class="cell">	<input name="digit" size="1" value="" id ="77" onchange="return verify(77);" type="text"></span>
+<div class="clr"> </div>
+<span class="cell">	<input name="digit" size="1" value="" id ="78" onchange="return verify(78);" type="text"></span>
+<span class="cell">	<input name="digit" size="1" value="" id ="79" onchange="return verify(79);" type="text"></span>
+<span class="cell">	<input name="digit" size="1" value="" id ="80" onchange="return verify(80);" type="text"></span>
+</span>
+<div class="clr"> </div>
+
+
+<div class="clr"> </div>
+<INPUT TYPE="button" NAME="button" Value="Solve" onClick="solvePuzzle(this.form)">
+
+
+</form>
+<p id="debug"> </p>
+</body>
+
+
+</html>

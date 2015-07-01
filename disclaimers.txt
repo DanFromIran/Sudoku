@@ -1,0 +1,10 @@
+Hi! 
+Implemenation of Sudoku puzzle, by Danial Ghofrani:
+
+I have used javascript to solve the Sudoku puzzle. 
+
+Disclaimer: I have copied the debug section of my code from https://drewnoakes.com/code/javascript/debugJavascript.html 
+
+I have looked at free source online code available on http://www.ccs.neu.edu/home/ramsdell/tools/sudoku.html in order to learn how to input with HTML forms. 
+
+All of the design and implementation of the Sudoku algorithm ARE MY OWN :) . 
